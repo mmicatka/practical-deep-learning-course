@@ -1,0 +1,26 @@
+{
+    "name": "jupyter-cuda",
+    "build": {
+        "context": ".",
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/nvidia-cuda:1": {
+            "installCudnn": true
+        }
+    },
+    "hostRequirements": {
+        "storage": "64gb"
+    },
+    "runArgs": [
+        "--gpus=all",
+        "--shm-size=24g"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-toolsai.jupyter"
+            ]
+        }
+    }
+}
